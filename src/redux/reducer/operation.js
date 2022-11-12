@@ -7,6 +7,7 @@ import { ADD_TODO,
 
 import {TODO_KEY, storageExist} from "../../storage/localStorage";
 
+storageExist([]);
 const storage = localStorage.getItem(TODO_KEY);
 
 const initialState = JSON.parse(storage);
