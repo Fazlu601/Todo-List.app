@@ -62,13 +62,13 @@ function FormTodo({editFormVisibility, editTodo, cancelUpdate}) {
         </Form.Group> 
       </Form>
       ):(
-      <Form className="form-group col-6 mx-auto" onSubmit={editSubmit} >
+      <Form className="form-group col-md-6 col-12 col-sm-8 mx-auto" onSubmit={editSubmit} >
           <Form.Group className="d-flex mb-3">
             <input type="text"  value={editValue || ''} className=" form-control" onChange={ (e) => setEditValue(e.target.value) } placeholder="Update your Todo Items" required />
-            <Button variant="primary" type="submit" className="submit ms-2">Update</Button>
+            <Button type="submit" className="submit ms-2">Update</Button>
           </Form.Group> 
           <Form.Group className="text-center">
-            <Button variant="primary" className="btn-md" style={{ width:'300px' }} onClick={ () => cancelUpdate() }>BACK</Button>
+            <Button className="btn-sm submit" style={{ width:'300px' }} onClick={ () => cancelUpdate() }>BACK</Button>
           </Form.Group>
       </Form>
         ) 
