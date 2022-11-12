@@ -57,14 +57,14 @@ function FormTodo({editFormVisibility, editTodo, cancelUpdate}) {
     { editFormVisibility===false?(
       <Form className="form-group col-md-6 col-12 col-sm-8 mx-auto" onSubmit={handleSubmit}>
         <Form.Group className="d-flex">
-          <input type="text" className=" form-control" onChange={ (e) => setTodoValue(e.target.value) } placeholder="Add your Todo List here" required />
+          <input type="text" className="border border-2 form-control" onChange={ (e) => setTodoValue(e.target.value) } placeholder="Add your Todo List here" required />
           <Button type="submit" className="submit ms-2">Add</Button>
         </Form.Group> 
       </Form>
       ):(
       <Form className="form-group col-md-6 col-12 col-sm-8 mx-auto" onSubmit={editSubmit} >
           <Form.Group className="d-flex mb-3">
-            <input type="text"  value={editValue || ''} className=" form-control" onChange={ (e) => setEditValue(e.target.value) } placeholder="Update your Todo Items" required />
+            <input type="text"  value={editValue || ''} className="border border-2 form-control" onChange={ (e) => setEditValue(e.target.value) } placeholder="Update your Todo Items" required />
             <Button type="submit" className="submit ms-2">Update</Button>
           </Form.Group> 
           <Form.Group className="text-center">
