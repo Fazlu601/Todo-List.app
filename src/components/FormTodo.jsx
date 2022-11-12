@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
+//Sweet alert with react content
 const MySwal = withReactContent(Swal)
 
 function FormTodo({editFormVisibility, editTodo, cancelUpdate}) {
@@ -15,9 +16,11 @@ function FormTodo({editFormVisibility, editTodo, cancelUpdate}) {
   const [ editValue, setEditValue ] = useState('');
 
   useEffect( () => {
+    //Catch edit todo from props and set to edit state
     setEditValue(editTodo.todo);
   }, [editTodo] )
 
+  //Submit Todo
   const handleSubmit = (e) => {
     e.preventDefault();
     const todoObj = {
@@ -25,7 +28,7 @@ function FormTodo({editFormVisibility, editTodo, cancelUpdate}) {
         todo : todoValue,
         isCompleted : false,
     }
-
+    //Dispatch and send object to action addTodo
       dispatch(addTodo(todoObj));
         MySwal.fire(
         'Success!',
@@ -35,6 +38,7 @@ function FormTodo({editFormVisibility, editTodo, cancelUpdate}) {
       e.target.reset();
     }
     
+    //Edit Todo
     const editSubmit = (e) => {
       e.preventDefault();
       const editObj = {
@@ -42,6 +46,7 @@ function FormTodo({editFormVisibility, editTodo, cancelUpdate}) {
         todo: editValue,
         completed: false
       }
+      //Dispatch and send object to action editTodoSubmit
       dispatch(editTodoSubmit(editObj));
       MySwal.fire(
         'Success!',
