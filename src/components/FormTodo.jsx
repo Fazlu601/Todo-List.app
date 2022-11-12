@@ -32,7 +32,7 @@ function FormTodo({editFormVisibility, editTodo, cancelUpdate}) {
       dispatch(addTodo(todoObj));
         MySwal.fire(
         'Success!',
-        'Todo succesfully added some todo.',
+        'Succesfully added some todo.',
         'success'
       )
       e.target.reset();
