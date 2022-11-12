@@ -48,7 +48,7 @@ function Todos({handleEditClick, editFormVisibility}) {
             if(filter === true || filter === false) {
                 if(item.isCompleted === filter) {
                     return (
-                        <Card key={item.id} className="p-3 col-md-6 col-12 col-sm-8 mx-auto mb-3">
+                        <Card key={item.id} className="p-3 col-md-6 col-12 botrder-3 col-sm-8 mx-auto mb-3">
                                 <Row className="d-flex justify-content-between">
                                     <Form.Group className="col-6 d-flex">
                                     { editFormVisibility===false&&( <Form.Check className="fs-3 pe-3 rounded-0" checked={item.isCompleted} onChange={ () => dispatch(handleCompleted(item.id)) } type="checkbox" size="lg" />)}
